@@ -28,8 +28,7 @@ class ProgramFlow
 		
 		public static void main(String args[])
 		{
-			
-			
+		
 			ProgramFlow obj = new ProgramFlow();
 			System.out.println("i am from main method");
 			

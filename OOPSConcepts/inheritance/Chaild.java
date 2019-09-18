@@ -1,12 +1,9 @@
 class Parent
 {
-		public void sum(int x, int y)
-		{
+		public void sum(int x, int y){
 		
 			System.out.println("sum is "+(x+y));
 		}
-
-
 }
 class Chaild extends Parent
 {
@@ -15,14 +12,10 @@ class Chaild extends Parent
 		
 			System.out.println("sub is "+(x-y));
 		}
-
-
-
 		public static void main(String args[])
 		{
 			Chaild obj = new Chaild();
-			obj.sub(100,50);
-			
+			obj.sub(100,50);	
 			obj.sum(100,50);
 			
 			Parent pobj = new Parent();

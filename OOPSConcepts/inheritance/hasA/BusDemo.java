@@ -1,9 +1,6 @@
 class BusDemo
 {
 
-
-
-
 	public void getBusses(Bus[] busses, String busType)
 	{
 		
@@ -15,7 +12,8 @@ class BusDemo
 			{
 				
 				
-				System.out.println(obj.getBusId()+" "+obj.getBusName()+" "+obj.getFare()+" "+obj.getBusType());
+				System.out.println(obj.getBusId()+" "+obj.getBusName()+" "+
+				obj.getFare()+" "+obj.getBusType());
 				
 			}else
 			{
@@ -26,12 +24,9 @@ class BusDemo
 		}
 		
 	}
-	
-	
 	public void getBusses(Bus[] busses, String busType, double fare)
 	{
-		
-		
+			
 		for(int i=0;i<busses.length;i++)
 		{
 			Bus busObj = busses[i];

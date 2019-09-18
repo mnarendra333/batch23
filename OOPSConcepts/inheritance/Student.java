@@ -16,22 +16,17 @@ class Student
 	
 	public int getId()
 	{
-		
 		return id;
 	}
 	
 	public String getName()
-	{
-		
+	{	
 		return name;
 	}
-	
 	public double getMarks()
 	{
 		
 		return marks;
 	}
-
-
 
 }

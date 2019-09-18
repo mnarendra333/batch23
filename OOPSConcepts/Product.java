@@ -24,7 +24,7 @@ class Product
 	
 	public static void invokeStaticMethod()
 	{
-		System.out.println(prize);
+		System.out.println(sellerName);
 	}
 	
 	public void displayLocalVar(){
