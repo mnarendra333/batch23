@@ -2,14 +2,13 @@ package pack1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.PreparedStatement;
 
-public class InsertDemo {
+public class PreparedStetementDemo {
 
 	public static void main(String[] args) {
-		//step-1
+		// TODO Auto-generated method stub
+		
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			//step-2
@@ -17,22 +16,17 @@ public class InsertDemo {
 					DriverManager.getConnection
 		   ("jdbc:oracle:thin:@localhost:1521:xe", "system", "system");
 			
-			System.out.println(connection.getClass());
-			//step-3
-			Statement stmt = connection.createStatement();
-			
-			//step-4
-			//stmt.executeUpdate
-	//("create table test(id number(10),name varchar2(20))");
-			
-			int count = stmt.executeUpdate
-					("drop table test");
-			
+			PreparedStatement pstmt = 
+	connection.prepareStatement("insert into product values(?,?,?,?)");
+			pstmt.setInt(1, 109);
+			pstmt.setString(2, "dell-inspiron");
+			pstmt.setDouble(3, 60000);
+			pstmt.setString(4, "good");
+			int count = pstmt.executeUpdate();
 			System.out.println(count+" rows effected");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 
 	}
 
