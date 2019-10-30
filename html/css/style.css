@@ -1,0 +1,41 @@
+.formDiv{
+			
+			
+				height: 300px;
+				width:400px;
+				background-color: #CACFD2;
+				border-radius: 10px;
+			
+			}
+			.rowDiv{
+				
+				display: flex;
+				padding: 20px 10px 10px 10px;
+			
+			}
+			.lableDiv{
+				padding-top: 10px;
+				padding-right : 20px;
+			
+			}
+			.lableDivForPwd{
+				padding-top: 10px;
+				padding-right : 23px;
+			}
+			.inputSty
+			{
+			
+				height: 35px;
+				border-radius: 10px;
+				width: 250px;
+			}
+			.btnStl {
+				margin-left: 100px;
+				height: 35px;
+				width: 60px;
+				border-radius: 10px;
+				background-color: green;
+			}
+
+
+			}
