@@ -13,7 +13,7 @@ public class ArrayListDemo {
 		al.add(20.5);
 		al.add(true);
 		al.add(10.5);
-		al.add(30);
+		al.add(40);
 		al.add(30);
 		System.out.println(al);
 		System.out.println(al.size());
