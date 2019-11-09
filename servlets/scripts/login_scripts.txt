@@ -1,0 +1,10 @@
+CREATE TABLE "USERLIST" 
+   (	"USERNAME" VARCHAR2(20 BYTE), 
+	"PASSWORD" VARCHAR2(20 BYTE)
+   );
+   
+   
+Insert into USERLIST (USERNAME,PASSWORD) values ('suresh','suresh');
+Insert into USERLIST (USERNAME,PASSWORD) values ('anil','anil');
+Insert into USERLIST (USERNAME,PASSWORD) values ('kumar','kumar');
+Insert into USERLIST (USERNAME,PASSWORD) values ('raja','raja');
