@@ -1,0 +1,17 @@
+
+step1:
+======
+http://localhost:4444/ScopesInServlets
+
+-fill the form 
+
+
+step-2
+======
+open a new tab in chrome and directly hit srv2
+http://localhost:4444/ScopesInServlets/srv2
+
+step3
+=====
+open a IE and hit with below url
+http://localhost:4444/ScopesInServlets/srv2
