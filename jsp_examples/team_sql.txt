@@ -1,0 +1,7 @@
+create table ipl_teams_data(team_id number(10), team_name varchar2(20),city varchar2(20),captain varchar2(20),ambassader varchar2(20),flag blob);
+
+alter table ipl_teams_data add primary key(team_id);
+
+insert into ipl_teams_data(team_id,team_name,city,captain,ambassader) values(1,'MI','mumbai','Rohith Sharma','Ambani');
+
+insert into ipl_teams_data(team_id,team_name,city,captain,ambassader) values(2,'RCB','bangl','Kohli','Malya');
