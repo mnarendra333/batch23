@@ -34,14 +34,51 @@ public class TeamsController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		int id = 0;
 		TeamsDaoImpl dao = new TeamsDaoImpl();
-		List<TeamInfo> teams = dao.getTeams();
-		request.setAttribute("teamsData", teams);
+		String btnName = request.getParameter("btnName");
+		
+		String idValue = request.getParameter("id");
+		if(idValue!=null)
+			id = Integer.parseInt(idValue);
 		
 		//logic to navigate to jsp file to display teams info
 		
+		if("delete".equalsIgnoreCase(btnName)) {
+			String message = dao.deleteTeam(id);
+			request.setAttribute("msg", message);
+			
+		}
+		
+		if("edit".equalsIgnoreCase(btnName)) {
+			TeamInfo teamById = dao.getTeamById(id);
+			request.setAttribute("teamObj", teamById);
+			
+		}
+		
+		if("add".equalsIgnoreCase(btnName)) {
+			
+			
+			String teamName = request.getParameter("teamName");
+			String city = request.getParameter("city");
+			String captain = request.getParameter("captain");
+			String ambassader = request.getParameter("ambassader");
+			
+			String message = dao.addTeam(teamName, city, captain, ambassader);
+			request.setAttribute("msg", message);
+		}
+		
+		//if(btnName!=null || btnName.equalsIgnoreCase("delete"))
+		
+		
+		List<TeamInfo> teams = dao.getTeams();
+		request.setAttribute("teamsData", teams);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("displayTeams.jsp");
 		rd.forward(request, response);
+		
+		
+		
 		
 	}
 
