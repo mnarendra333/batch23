@@ -26,13 +26,13 @@
 
 
 <!-- or -->
-
+<form class="form-horizontal" action="teamssrv" method="post">
 <%
 TeamInfo obj = (TeamInfo)request.getAttribute("teamObj");
 if(obj!=null && obj.getTeamId()!=0){
 %>
 
-<form class="form-horizontal" action="teamssrv">
+	<input type="hidden" name="teamId" value=<%=obj.getTeamId()%>>
   <div class="form-group">
     <label class="control-label col-sm-2" for="teamName">Team Name:</label>
     <div class="col-sm-6">
@@ -42,15 +42,8 @@ if(obj!=null && obj.getTeamId()!=0){
   <div class="form-group">
     <label class="control-label col-sm-2" for="pwd">City:</label>
     <div class="col-sm-6">
-      <select class="form-control" id="city" name="city">
-      	<option>bangl</option>
-      	<option>kolkatta</option>
-      	<option>mumbai</option>
-      	<option>pune</option>
-      	<option>rajastan</option>
-      	<option>delhi</option>
-      	<option>chenni</option>
-      </select>
+      <input type="text" class="form-control" id="city" name="city" value="<%=obj.getCity()%>">
+      	
     </div>
   </div>
   <div class="form-group">
@@ -62,7 +55,7 @@ if(obj!=null && obj.getTeamId()!=0){
   <div class="form-group">
     <label class="control-label col-sm-2" for="captain">Ambassader</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="ambassader" name="ambassader" placeholder="Enter Ambassader Name" value="">
+      <input type="text" class="form-control" id="ambassader" name="ambassader" placeholder="Enter Ambassader Name" value="<%=obj.getAmbassader()%>">
     </div>
   </div>
   
@@ -79,7 +72,9 @@ if(obj!=null && obj.getTeamId()!=0){
     <label class="control-label col-sm-2" for="pwd">City:</label>
     <div class="col-sm-6">
       <select class="form-control" id="city" name="city">
+      	<option>--select--</option>	
       	<option>bangl</option>
+      	<option>panjab</option>
       	<option>kolkatta</option>
       	<option>mumbai</option>
       	<option>pune</option>
@@ -107,21 +102,21 @@ if(obj!=null && obj.getTeamId()!=0){
  
  <%
   }
- 	if(obj!=null && obj.getTeamId()!=0)
+ 	if(obj!=null && obj.getTeamId()!=0){
  %>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default" name="btnName" value="update">Update Team</button>
     </div>
   </div>
-  
+  <%}else{ %>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default" name="btnName" value="add">Add Team</button>
     </div>
   </div>
   
-  
+  <%} %>
 </form>
 
 <br>
@@ -164,7 +159,7 @@ if(obj!=null && obj.getTeamId()!=0){
 				<td><%= info.getCity()%></td>
 				<td><%= info.getCaptain()%></td>
 				<td><%= info.getAmbassader()%></td>
-				<td><a href="" class="btn btn-primary">edit</a></td>
+				<td><a href="teamssrv?btnName=edit&id=<%= info.getTeamId()%>" class="btn btn-primary">edit</a></td>
 				<td><a href="teamssrv?btnName=delete&id=<%= info.getTeamId()%>" class="btn btn-danger">delete</a></td>
 			</tr>
 		<%} %>

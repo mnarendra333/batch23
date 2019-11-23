@@ -67,6 +67,16 @@ public class TeamsController extends HttpServlet {
 			String message = dao.addTeam(teamName, city, captain, ambassader);
 			request.setAttribute("msg", message);
 		}
+		if("update".equalsIgnoreCase(btnName)) {
+			
+			int teamId = Integer.parseInt(request.getParameter("teamId"));
+			String teamName = request.getParameter("teamName");
+			String city = request.getParameter("city");
+			String captain = request.getParameter("captain");
+			String ambassader = request.getParameter("ambassader");
+			String message = dao.updateTeam(teamName, city, captain, ambassader, teamId);
+			request.setAttribute("msg", message);
+		}
 		
 		//if(btnName!=null || btnName.equalsIgnoreCase("delete"))
 		

@@ -25,6 +25,10 @@ public class TeamInfo {
 		this.ambassader = ambassader;
 		this.flag = flag;
 	}
+	public TeamInfo() {
+		
+	}
+	
 	
 	
 
