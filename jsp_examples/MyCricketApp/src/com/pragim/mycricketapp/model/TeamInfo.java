@@ -42,5 +42,7 @@ public class TeamInfo {
 	public String getAmbassadar() {
 		return ambassadar;
 	}
+	
+	
 
 }

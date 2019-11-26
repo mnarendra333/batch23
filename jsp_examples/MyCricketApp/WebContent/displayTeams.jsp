@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List,com.pragim.mycricketapp.model.TeamInfo" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
 
 <div class="container">
   <h2>Horizontal form</h2>
-  <form class="form-horizontal" action="teamssrv">
+  <form class="form-horizontal" action="teamssrv" method="post">
    
   <% if(obj!=null){
 	%>
@@ -103,21 +104,24 @@ if(message!=null){
 <%
 
 List<TeamInfo> list = (List<TeamInfo>)request.getAttribute("myteams");
+request.setAttribute("data", list);
 
 	if(list!=null){
-		for(TeamInfo teamInfo:list){
+		
 %>
+	<c:forEach var="item" items="${data}">
 	<tr>
-		<td><%=teamInfo.getTeamId() %></td>
-		<td><%=teamInfo.getTeamName() %></td>
-		<td><%=teamInfo.getCity()%></td>
-		<td><%=teamInfo.getCaptain()%></td>
-		<td><%=teamInfo.getAmbassadar() %></td>
-		<td><a href="teamssrv?id=<%=teamInfo.getTeamId() %>&btnName=delete" class="btn btn-primary">delete</a></td>
-		<td><a href="teamssrv?id=<%=teamInfo.getTeamId() %>&btnName=edit" class="btn btn-primary">edit</a></td>
+		<td><c:out value="${item.teamId}"/></td>
+		<td><c:out value="${item.teamName}"/></td>
+		<td><c:out value="${item.city}"/></td>
+		<td><c:out value="${item.captain}"/></td>
+		<td><c:out value="${item.ambassadar}"/></td>
+		<td><a href="teamssrv?id=${item.teamId}&btnName=delete" class="btn btn-primary">delete</a></td>
+		<td><a href="teamssrv?id=${item.teamId}&btnName=edit" class="btn btn-primary">edit</a></td>
 	</tr>
+	</c:forEach>
 	
-	<%}} %>
+	<%} %>
 </table>
 </body>
 </html>
