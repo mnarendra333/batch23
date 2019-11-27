@@ -38,6 +38,39 @@
 	
 	</c:forEach>
 	
+	
+	
+	<c:set var="ch" value="g"/>
+	<c:choose>
+		<c:when test="${ch == 'a'}">
+			<c:out value="${ch} is a vowel"/>
+		</c:when>
+		<c:when test="${ch == 'e'}">
+			<c:out value="${ch} is a vowel"/>
+		</c:when>
+		<c:when test="${ch == 'i'}">
+			<c:out value="${ch} is a vowel"/>
+		</c:when>
+		<c:when test="${ch == 'o'}">
+			<c:out value="${ch} is a vowel"/>
+		</c:when>
+		<c:when test="${ch == 'u'}">
+			<c:out value="${ch} is a vowel"/>
+		</c:when>
+		<c:otherwise>
+			<c:out value="${ch} is a consonent"/>
+		</c:otherwise>
+	
+	
+	</c:choose>
+	
+	
+	
+	<c:forTokens items="Today is not a holiday" delims=" " var="str">
+	
+		<c:out value="${str}"></c:out>
+	</c:forTokens>
+	
 
 </body>
 </html>
