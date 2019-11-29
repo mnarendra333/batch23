@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+
+	<class name="pack1.Orders">
+
+		<id name="orderId" column="order_id" />
+		<property name="noofitems"/>
+		<property name="foodName" length="30"/>
+		<property name="restarentName" length="30"/>
+		<property name="price" />
+		<property name="discount"  />
+
+
+	</class>
+
+
+
+</hibernate-mapping>
