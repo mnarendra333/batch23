@@ -1,13 +1,24 @@
 package pack1;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Orders {
 
+	@Id
+	@Column(name="order_id")
 	private long orderId;
 
 	private int noofitems;
 
+	@Column(length=30)
 	private String foodName;
 
+	@Column(length=30)
 	private String restarentName;
 
 	private double price;
