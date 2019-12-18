@@ -4,10 +4,14 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table
@@ -18,8 +22,10 @@ public class Vendor {
 	private String location;
 
 	
-	@OneToMany(cascade=CascadeType.ALL,targetEntity=Customer.class)
+	
+	@OneToMany(cascade=CascadeType.ALL,targetEntity=Customer.class,orphanRemoval=true)
 	@JoinColumn(name="vendor_id")
+	@Fetch(FetchMode.SELECT)
 	private Set<Customer> customerList;
 
 	public int getVenId() {

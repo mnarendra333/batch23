@@ -20,11 +20,8 @@ public class Student {
 	private String name;
 	private String addr;
 
-	@ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER,targetEntity=Course.class)
-	@JoinTable(name="student_courses", joinColumns = { 
-			@JoinColumn(name = "stu_id", nullable = false) }, 
-			inverseJoinColumns = { @JoinColumn(name = "course_id", 
-					nullable = false) })
+	@ManyToMany(mappedBy="studentList",cascade=CascadeType.ALL)
+	
 	private Set<Course> courseList;
 
 	public int getStuId() {

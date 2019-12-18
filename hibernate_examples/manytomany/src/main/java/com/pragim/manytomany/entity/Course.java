@@ -20,6 +20,10 @@ public class Course {
 	private int duration;
 
 	@ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER,targetEntity=Student.class)
+	@JoinTable(name="student_courses", joinColumns = { 
+			@JoinColumn(name = "course_id", nullable = false) }, 
+			inverseJoinColumns = { @JoinColumn(name = "stu_id", 
+					nullable = false) })
 	private Set<Student> studentList;
 
 	public int getCourseId() {

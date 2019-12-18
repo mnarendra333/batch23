@@ -22,10 +22,7 @@ public class App
        SessionFactory factory = HibernateUtil.getSessionFactory();
        Session session = factory.openSession();
        
-       Course c1 = new Course();
-       c1.setCourseId(101);
-       c1.setCourseName("JAVA");
-       c1.setDuration(100);
+    
        
        Course c2 = new Course();
        c2.setCourseId(102);
@@ -39,15 +36,14 @@ public class App
        
        
        Set<Course> courseList = new HashSet<Course>();
-       courseList.add(c1);
        courseList.add(c2);
        courseList.add(c3);
        
        
        
        Student student = new Student();
-       student.setStuId(1);
-       student.setName("Surya");
+       student.setStuId(2);
+       student.setName("ravi");
        student.setAddr("bangl");
        student.setCourseList(courseList);
        
