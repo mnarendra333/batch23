@@ -33,6 +33,8 @@ public class InsertClient {
 		student3.setStuId(5);
 		student3.setName("nikhil");
 		student3.setAddr("bangl");
+		
+	
 
 		Set<Student> stuList = new LinkedHashSet<Student>();
 		stuList.add(student1);
@@ -44,7 +46,7 @@ public class InsertClient {
 		course.setCourseName("JAVA");
 		course.setDuration(100);
 		course.setStudentList(stuList);
-
+		
 		Transaction tx = session.beginTransaction();
 		session.persist(course);
 		tx.commit();

@@ -23,8 +23,11 @@ public class DeleteChaild {
 	     Course course = session.get(Course.class, 101);
 	     Transaction beginTransaction = session.beginTransaction();
 	     Set<Student> studentList = course.getStudentList();
+	    
+	     if(studentList!=null)
+	    	 System.out.println(studentList.size());
 	     Iterator<Student> iterator = studentList.iterator();
-	     while (iterator.hasNext()) {
+	     while (iterator!=null && iterator.hasNext()) {
 	    	 Student student = iterator.next();
 				iterator.remove();
 		}
