@@ -1,0 +1,17 @@
+package com.pragim.springdiwithobject;
+
+public class Flight implements Vehicle {
+
+	@Override
+	public void start() {
+		System.out.println("Flight started");
+
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

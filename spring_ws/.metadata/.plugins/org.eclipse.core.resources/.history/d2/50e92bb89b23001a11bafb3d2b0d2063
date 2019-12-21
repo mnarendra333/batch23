@@ -1,0 +1,21 @@
+package com.pragim.springfirstapp;
+
+import javax.annotation.Resource;
+
+import org.springframework.core.io.ClassPathResource;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       
+    		Resource res = new ClassPathResource("spring.xml");
+    	
+    	
+    	
+    }
+}

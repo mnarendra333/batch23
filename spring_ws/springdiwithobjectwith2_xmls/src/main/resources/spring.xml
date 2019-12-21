@@ -1,0 +1,23 @@
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"> 
+
+
+	<bean id="id1" class="springdiwithobjectwith2_xmls.Car">
+	
+	</bean>
+	
+	<bean id="id2" class="springdiwithobjectwith2_xmls.Flight">
+	
+	</bean>
+	<bean id="id3" class="springdiwithobjectwith2_xmls.Train">
+	
+	</bean>
+	
+	
+	
+
+
+</beans>

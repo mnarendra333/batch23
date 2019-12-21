@@ -1,0 +1,30 @@
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"> 
+
+
+	<bean id="id1" class="com.pragim.springdiwithobject.Car">
+	
+	</bean>
+	
+	<bean id="id2" class="com.pragim.springdiwithobject.Flight">
+	
+	</bean>
+	<bean id="id3" class="com.pragim.springdiwithobject.Train">
+	
+	</bean>
+	
+	
+	<bean id="id4" class="com.pragim.springdiwithobject.Traveller">
+	
+		<property name="vehicle" ref="id1">
+		
+			<ref />
+		</property>
+	
+	</bean>
+
+
+</beans>

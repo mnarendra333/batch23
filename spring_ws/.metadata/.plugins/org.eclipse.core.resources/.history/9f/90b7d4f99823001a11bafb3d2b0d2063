@@ -1,0 +1,11 @@
+package com.pragim.springfirstapp;
+
+public class HelloWorldBean {
+	
+	
+	private String message;
+	
+	
+	
+
+}

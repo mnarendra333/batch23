@@ -1,0 +1,17 @@
+package com.pragim.springdiwithobject;
+
+public class Car implements Vehicle {
+
+	@Override
+	public void start() {
+		System.out.println("Care started");
+
+	}
+
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

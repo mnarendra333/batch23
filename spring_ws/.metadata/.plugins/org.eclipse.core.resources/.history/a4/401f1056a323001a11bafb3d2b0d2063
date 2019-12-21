@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean id="id4" class="com.pragim.springdiwithobject.Traveller">
+	
+		<property name="vehicle">
+			<ref bean="id1"/>
+		</property>
+	
+	</bean>
