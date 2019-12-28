@@ -17,6 +17,10 @@ public class App
         //bean.updateSeller(5, "chenni");
         
         //bean.deleteSeller("HindustanElc");
-        bean.findAll();
+       // bean.findAll();
+       // bean.selectUsingResultSetExt();
+       // bean.queryWithResultSetExtUsingNewClass();
+        //bean.queryDataUsingRowMapper();
+        bean.selectData();
     }
 }

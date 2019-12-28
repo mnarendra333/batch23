@@ -24,7 +24,7 @@
 	</bean>
 	
 	
-	<bean id="id1" class="com.pragim.springjdbccrud.SpringJdbcBean">
+	<bean id="id1" class="com.pragim.springjdbccrud.SpringJdbcBean" >
 	
 		<property name="jt" ref="template"></property>
 	
