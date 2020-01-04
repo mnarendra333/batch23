@@ -29,6 +29,29 @@ public class ProductDAOImpl {
 		return jdbcTemplate.query("select * from product", new ProductMapper());
 
 	}
+
+
+
+	public String deleteProduct(int id) {
+		String message = null;
+		int count = jdbcTemplate.update("delete from product where pro_id=?", id);
+		if(count>0){
+			message = "Product deleted successfully";
+		}
+		return message;
+	}
+
+
+
+	public String saveProduct(Product product) {
+		String message = null;
+		int count = jdbcTemplate.update("insert into product values(prod_seq.nextval,?,?,?)",product.getProName(),product.getPrice(),product.getProDesc());
+		if(count>0){
+			message = "Product added successfully";
+		}
+		return message;
+		
+	}
 	
 	
 

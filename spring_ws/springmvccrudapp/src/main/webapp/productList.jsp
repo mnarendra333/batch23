@@ -10,6 +10,10 @@
 </head>
 <body>
 
+<a href=${pageContext.request.contextPath}/product/displayform>AddProduct</a>
+<div>
+	${msg}
+</div>
 <table width="100%">
 
 	<c:forEach  var="product" items="${list}">
@@ -18,6 +22,7 @@
 		<td>${product.proName}</td>
 		<td>${product.price}</td>
 		<td>${product.proDesc}</td>
+		<td><a href="product/delete?id=${product.proId}">delete</a></td>
 		
 		</tr>
 	

@@ -4,7 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pragim.springmvccrudapp.dao.ProductDAOImpl;
@@ -22,13 +27,36 @@ public class ProductController {
 		this.dao = dao;
 	}
 
-
-
-	@RequestMapping("/list")
-	public ModelAndView getProducts(){
+	@RequestMapping(value="/displayform",method=RequestMethod.GET)
+	public String displayAddProductPage(ModelMap model){
+		Product product = new Product();
+		model.addAttribute("product", product);
+		return "addProduct";
+	}
+	@RequestMapping(value="/add",method=RequestMethod.POST)
+	public String addProduct(@ModelAttribute("product") Product product,ModelMap model){
+		String message = dao.saveProduct(product);
+		model.addAttribute("msg", message);
+		return "redirect:/product/list";
+	}
+	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String getProducts(@RequestParam(name="msg",required=false) String message,ModelMap model){
 		List<Product> products = dao.getProducts();
 		products.forEach(System.out::println);
-		return new ModelAndView("productList", "list", products);
+		model.addAttribute("msg", message);
+		model.addAttribute("list",products);
+		return "productList";
+	}
+	
+	@RequestMapping("/delete")
+	public String deleteProduct(@RequestParam("id") String id,ModelMap model){
+		
+		int proId = Integer.parseInt(id);
+		String message = dao.deleteProduct(proId);
+		model.addAttribute("msg", message);
+		
+		return "redirect:/product/list";
 	}
 
 }

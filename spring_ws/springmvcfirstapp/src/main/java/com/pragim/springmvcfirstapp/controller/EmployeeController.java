@@ -10,7 +10,7 @@ public class EmployeeController {
 	
 	
 	@RequestMapping("/welcome")
-	public ModelAndView welcome(){
+	public ModelAndView fgfgdgv(){
 	
 		ModelAndView obj = new ModelAndView("success", "msg", "Welcome to Spring MVC Framework!!!");
 		return obj;
