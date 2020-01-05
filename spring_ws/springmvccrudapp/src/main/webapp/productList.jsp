@@ -22,7 +22,8 @@
 		<td>${product.proName}</td>
 		<td>${product.price}</td>
 		<td>${product.proDesc}</td>
-		<td><a href="product/delete?id=${product.proId}">delete</a></td>
+		<td><a href=${pageContext.request.contextPath}/product/delete?id=${product.proId}>delete</a></td>
+		<td><a href=${pageContext.request.contextPath}/product/displayedit?id=${product.proId}>edit</a></td>
 		
 		</tr>
 	

@@ -58,5 +58,20 @@ public class ProductController {
 		
 		return "redirect:/product/list";
 	}
+	
+	@RequestMapping("/displayedit")
+	public String displayEditForm(@RequestParam("id") String pid, ModelMap model){
+		int proId = Integer.parseInt(pid);
+		Product product = dao.findProductById(proId);
+		model.addAttribute("product", product);
+		return "editProduct";
+	}
+	
+	@RequestMapping(value="/update",method=RequestMethod.POST)
+	public String updateProduct(@ModelAttribute("product") Product product,ModelMap model){
+		String message = dao.updateProduct(product);
+		model.addAttribute("msg", message);
+		return "redirect:/product/list";
+	}
 
 }

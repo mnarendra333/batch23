@@ -52,6 +52,26 @@ public class ProductDAOImpl {
 		return message;
 		
 	}
+
+
+
+	public Product findProductById(int proId) {
+			
+		Product product = jdbcTemplate.queryForObject("select * from product where pro_id=?",new ProductMapper(),proId);
+		System.out.println(product);
+		return product;
+	}
+
+
+
+	public String updateProduct(Product product) {
+		String message = null;
+		int count = jdbcTemplate.update("update product set pro_name=?,price=?,pro_desc=? where pro_id=?",product.getProName(),product.getPrice(),product.getProDesc(),product.getProId());
+		if(count>0){
+			message = "Product updated successfully";
+		}
+		return message;
+	}
 	
 	
 
