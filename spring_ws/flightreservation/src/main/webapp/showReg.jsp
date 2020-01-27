@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<a href="user/regview">register here</a>
+	<a href="displayreg">register here</a>
 
 </body>
 </html>

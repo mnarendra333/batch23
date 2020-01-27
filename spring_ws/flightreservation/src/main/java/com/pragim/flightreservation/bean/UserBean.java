@@ -1,29 +1,18 @@
-package com.pragim.flightreservation.entity;
+package com.pragim.flightreservation.bean;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="user_info")
-public class User {
-	
-	@Id
-	@GeneratedValue
+public class UserBean {
+
 	private int id;
-	
-	@Column(length=20)
+
 	private String firstName;
-	
-	@Column(length=20)
+
 	private String lastName;
-	
-	@Column(length=30)
+
 	private String email;
-	
-	@Column(length=20)
+
 	private String password;
 
 	public int getId() {
@@ -68,12 +57,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", password=" + password
-				+ "]";
+		return "UserBean [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + "]";
 	}
-	
-	
-	
 
 }
