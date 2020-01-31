@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.pragim.flightreservation.bean.ReservationRequest;
 import com.pragim.flightreservation.bean.ShowFlightsBean;
 import com.pragim.flightreservation.entity.Flight;
 import com.pragim.flightreservation.repo.FlightRepository;
@@ -42,6 +46,16 @@ public class FlightController {
 		List<Flight> flightList = flightrepo.findByDepartureCity(searchBean.getFrom(),searchBean.getTo(),ddep);
 		model.addAttribute("flights", flightList);
 		return "displayFlights";
+	}
+	
+	@GetMapping("/showConfirmPage")
+	public String showConfirmPage(@RequestParam("fid") String fid,ModelMap model) throws ParseException{
+		int flightId = Integer.parseInt(fid);
+		Flight flight = flightrepo.findById(flightId).get();
+		model.addAttribute("flighObj", flight);
+		model.addAttribute("reservationRequest",new ReservationRequest());
+		return "confirmBooking";
+		
 	}
 	
 	

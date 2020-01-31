@@ -8,8 +8,7 @@
 </head>
 <body>
 
-	<a href="displayreg">register here</a><br>
-	<a href="showlogin">login</a>
 
+	${msg}
 </body>
 </html>

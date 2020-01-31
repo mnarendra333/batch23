@@ -8,8 +8,13 @@
 </head>
 <body>
 
-	<a href="displayreg">register here</a><br>
-	<a href="showlogin">login</a>
+
+	<form action="getres">
+	
+		Enter Reservation Id : <input  type="text" name="resid"/>
+		<input type="submit" value="click"/> 
+	
+	</form>
 
 </body>
 </html>

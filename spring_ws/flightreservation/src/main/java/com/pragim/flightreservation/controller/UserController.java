@@ -8,7 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pragim.flightreservation.bean.LoginBean;
 import com.pragim.flightreservation.bean.ShowFlightsBean;
@@ -53,6 +52,12 @@ public class UserController {
 		userEntiry.setPassword(userbean.getPassword());
 		userepo.save(userEntiry);
 		model.addAttribute("msg", "user saved!!");
+		model.addAttribute("loginbean", new LoginBean());
+		return "login";
+	}
+	
+	@GetMapping(path="/showlogin")
+	public String showLogin(ModelMap model){
 		model.addAttribute("loginbean", new LoginBean());
 		return "login";
 	}
